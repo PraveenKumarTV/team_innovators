@@ -1,0 +1,64 @@
+.event-blogger-container {
+    padding: 20px;
+    background-color: #f4f7fa;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.blog-title {
+    font-size: 36px;
+    color: #0066cc;
+}
+
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.blog-input,
+.blog-textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.blog-submit-btn {
+    padding: 10px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.blog-submit-btn:hover {
+    background-color: #004999;
+}
+
+.post-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.post-item {
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.post-item h4 {
+    margin: 0;
+    color: #0066cc;
+}
+
+.post-item p {
+    margin: 5px 0 0;
+}

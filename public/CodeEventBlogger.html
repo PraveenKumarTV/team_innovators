@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Event</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .event-blogger-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .blog-title {
+            margin-bottom: 20px;
+            color: red;
+            text-align: center;
+        }
+        .blog-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .blog-submit-btn {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .response-message {
+            margin-top: 20px;
+            text-align: center;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="event-blogger-container">
+    <h2 class="blog-title">Create an Event</h2>
+    <form id="event-form">
+        <input type="text" class="blog-input" id="eventName" placeholder="Event Name" required />
+        <input type="date" class="blog-input" id="eventDate" required />
+        <input type="text" class="blog-input" id="contactDetails" placeholder="Contact Details" required />
+        <button type="submit" class="blog-submit-btn">Create Event</button>
+    </form>
+    <div class="response-message" id="responseMessage"></div>
+</div>
+
+<script>
+    document.getElementById('event-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        const eventName = document.getElementById('eventName').value;
+        const eventDate = document.getElementById('eventDate').value;
+        const contactDetails = document.getElementById('contactDetails').value;
+
+        const eventData = { eventName, eventDate, contactDetails };
+
+        try {
+            const response = await fetch('http://localhost:5000/create-event', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(eventData),
+            });
+
+            const message = response.ok ? 'Event created successfully!' : 'Failed to create event.';
+            document.getElementById('responseMessage').innerText = message;
+
+            if (response.ok) {
+                // Clear the form fields
+                document.getElementById('eventName').value = '';
+                document.getElementById('eventDate').value = '';
+                document.getElementById('contactDetails').value = '';
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('responseMessage').innerText = 'Error creating event.';
+        }
+    });
+</script>
+
+</body>
+</html>

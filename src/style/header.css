@@ -1,0 +1,135 @@
+.box-1 {
+    background: linear-gradient(135deg, #0066cc, #003366);
+    padding: 20px;
+    width: 96.7%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    margin: auto;
+    transition: all 0.5s ease;
+}
+
+.top-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    height: auto;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.booth-name h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffdd40;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.booth-name h1:hover {
+    color: #fff;
+}
+
+.event-details {
+    text-align: right;
+    margin-right: 20px;
+}
+
+.event-title {
+    font-size: 34px;
+    color: #ffdd40;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.event-date {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #f1f1f1;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 17px;
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.nav-link:hover {
+    color: #ffdd40;
+    text-decoration: underline;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 70px;
+    }
+
+    .event-title {
+        font-size: 28px;
+    }
+
+    .event-date {
+        font-size: 16px;
+    }
+
+    .booth-name h1 {
+        font-size: 24px;
+    }
+
+    .nav-link {
+        font-size: 15px;
+        margin: 0 10px;
+    }
+
+    .top-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .event-details {
+        text-align: center;
+        margin-right: 0;
+    }
+}
+
+.box-1 {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.box-1:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
